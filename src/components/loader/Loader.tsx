@@ -1,93 +1,80 @@
 "use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
-// Centering the loader on the screen
+// Parent container to center the loader
+const containerStyle = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100vh", // Take up the full height of the viewport
+  width: "100vw", // Take up the full width of the viewport
+};
+
 const loadingContainer = {
-  width: "4rem",
-  height: "4rem",
+  width: "6rem", // Increased size of the container
+  height: "6rem", // Increased size of the container
   display: "flex",
   justifyContent: "space-around",
-  alignItems: "center",
-  position: "fixed" as "fixed", // Correcting the position type
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  zIndex: 1000,
+  alignItems: "center", // Center the dots vertically
 };
 
 const loadingCircle = {
   display: "block",
-  width: "1rem",
-  height: "1rem",
-  borderRadius: "50%",
+  width: "1rem", // Increased size of the circles
+  height: "1rem", // Increased size of the circles
+  borderRadius: "50%", // Ensure it remains circular
 };
 
 const loadingContainerVariants = {
   start: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
   end: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const loadingCircleVariants = {
-  start: { y: "0%" },
-  end: { y: "100%" },
+  start: {
+    y: "0%",
+  },
+  end: {
+    y: "100%",
+  },
 };
 
 const loadingCircleTransition = {
-  duration: 1.5, // Duration is now longer (1.5 seconds)
+  duration: 0.8, // Slower animation
   yoyo: Infinity,
   ease: "easeInOut",
 };
 
-const COLORS = ["#ff0000", "#00ff00", "#0000ff"]; // Multicolor dots
+// Multicolor dots
+const COLORS = ["#FF5733", "#33FF57", "#3357FF"]; // Red, Green, Blue
 
 export const ThreeDotsWaveLoader = () => {
   return (
-    <motion.div
-      style={loadingContainer}
-      variants={loadingContainerVariants}
-      initial="start"
-      animate="end"
-    >
-      {COLORS.map((color, index) => (
-        <motion.span
-          key={index}
-          style={{ ...loadingCircle, backgroundColor: color }}
-          variants={loadingCircleVariants}
-          transition={loadingCircleTransition}
-        />
-      ))}
-    </motion.div>
+    <div style={containerStyle}>
+      <motion.div
+        style={loadingContainer}
+        variants={loadingContainerVariants}
+        initial="start"
+        animate="end"
+      >
+        {COLORS.map((color, index) => (
+          <motion.span
+            key={index}
+            style={{ ...loadingCircle, backgroundColor: color }} // Apply colors dynamically
+            variants={loadingCircleVariants}
+            transition={loadingCircleTransition}
+          />
+        ))}
+      </motion.div>
+    </div>
   );
 };
-
-const ClientLoader: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false); // End loading after 2 seconds (make the delay a bit longer)
-    }, 3000); // Adjusted to 1500ms (1.5s)
-
-    return () => clearTimeout(timer); // Cleanup timer on unmount
-  }, []);
-
-  if (loading) {
-    return <ThreeDotsWaveLoader />; // Show the loader
-  }
-
-  return <>{children}</>;
-};
-
-export default ClientLoader;
