@@ -15,7 +15,7 @@ const LandingPage = () => {
           <p className="text-5xl sm:text-7xl">{`Shanto`}</p>
         </h1>
         <motion.p
-          className="line-clamp-3 mt-5 text-sm sm:text-base text-gray-600 dark:text-white max-w-xl"
+          className="line-clamp-5 mt-5 text-sm sm:text-base text-gray-600 dark:text-white max-w-xl"
           initial={{ opacity: 0, scale: 0.5 }} // Initial state: invisible and shrunk
           animate={{ opacity: 1, scale: 1 }} // Final state: visible and full size
           transition={{
@@ -25,9 +25,7 @@ const LandingPage = () => {
           }}
         >
           {`I am a passionate and creative Web Developer with a love for beautiful
-          and functional websites. I have experience working with a variety of
-          web technologies and frameworks and I am always eager to learn new
-          things and take on new challenges.`}
+          and functional websites.`}
         </motion.p>
         <div className="bg-green-300"></div>
       </div>
