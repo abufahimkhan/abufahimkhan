@@ -9,7 +9,7 @@ export const ThreeDotsWaveLoader = () => {
   useEffect(() => {
     const colorChangeInterval = setInterval(() => {
       setColorIndex((prevIndex) => (prevIndex + 1) % loaderColors.length); // Cycle through colors
-    }, 1000); // Change color every second
+    }, 300); // Change color every second
 
     return () => clearInterval(colorChangeInterval); // Cleanup interval on unmount
   }, [loaderColors.length]);

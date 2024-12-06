@@ -41,7 +41,7 @@ export const NavBarMobile = () => {
             transition={{ duration: 0.3 }}
             className="fixed left-0 right-0 top-[3.5rem] p-5 bg-neutral-950 shadow-4xl border-b border-b-white/20"
           >
-            <ul className="grid gap-2">
+            <ul className="flex flex-col gap-2">
               {MenuItems.map((item, idx) => (
                 <motion.li
                   key={item.label}

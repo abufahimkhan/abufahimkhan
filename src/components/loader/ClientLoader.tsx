@@ -11,7 +11,7 @@ const ClientLoader: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // End loading after 5 seconds
-    }, 5000); // Increased timeout duration to 5 seconds
+    }, 3000); // Increased timeout duration to 5 seconds
 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
