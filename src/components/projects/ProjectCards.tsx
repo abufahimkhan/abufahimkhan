@@ -6,14 +6,14 @@ import Badges from "../common/custom-element/Badges";
 import { Images } from "../utils/Images";
 import { SkillData } from "../utils/SkillData";
 
-const SkillCards = () => {
+const ProjectCards = () => {
   return (
     <div className="p-5">
       {/* Title Section */}
       <div className="flex justify-center items-center gap-2 py-5 mb-5">
-        <ImageShow source={Images.Showcase_skill} CustomCss="w-16 h-16 mb-5" />
+        <ImageShow source={Images.Showcase_project} CustomCss="w-14 h-14 mb-5" />
         <div className="uppercase text-gray-500 dark:text-white font-black text-md glow">
-          My Skills
+          My Projects
         </div>
       </div>
 
@@ -44,4 +44,4 @@ const SkillCards = () => {
   );
 };
 
-export default SkillCards;
+export default ProjectCards;
