@@ -1,11 +1,15 @@
-import LandingPage from "@/components/home/LandingPage";
+import HeroSection from "@/components/hero/HeroSection";
+import ProjectCards from "@/components/projects/ProjectCards";
 import SkillCards from "@/components/skills/SkillCards";
 
 export default function Home() {
   return (
     <>
-      <LandingPage />
-      <SkillCards />
+      <HeroSection />
+      <div className="*:mt-12">
+        <SkillCards />
+        <ProjectCards />
+      </div>
     </>
   );
 }

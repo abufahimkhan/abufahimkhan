@@ -1,10 +1,13 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
-import { Images } from "../utils/Images";
 import { motion } from "framer-motion";
-
-const HeroImage = () => {
+import clsx from "clsx";
+interface ImageProps{
+    source: string | StaticImageData;
+    CustomCss?: string;
+}
+const ImageShow:React.FC<ImageProps> = ({source,CustomCss}) => {
   return (
     <div>
       <motion.div
@@ -15,8 +18,8 @@ const HeroImage = () => {
         transition={{ duration: 0.5 }} // Smooth animation
       >
         <Image
-          src={Images.hero_dark}
-          className=" object-cover w-56 h-56"
+          src={source}
+          className={(clsx(" object-cover w-56 h-56", CustomCss))}
           alt="shanto"
         />
       </motion.div>
@@ -24,4 +27,4 @@ const HeroImage = () => {
   );
 };
 
-export default HeroImage;
+export default ImageShow;
