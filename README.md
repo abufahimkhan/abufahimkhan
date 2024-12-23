@@ -1,8 +1,8 @@
-                                                                                              💡 "Building modern, future-proof solutions—one project at a time." ✨
+💡 "Building modern, future-proof solutions—one project at a time." ✨
 
-                                                                                                                    ✨ Abu Fahim Khan | JavaScript Developer 💻
-                                                                                                                    👋 Hello there!
-                                      Welcome to my GitHub! I'm Abu Fahim Khan Shantanu, a passionate JavaScript Developer specializing in Front-End Development, RESTful Services, and creating dynamic, user-friendly web and mobile applications. 🚀
+  ✨ Abu Fahim Khan | JavaScript Developer 💻
+  👋 Hello there!
+      Welcome to my GitHub! I'm Abu Fahim Khan Shantanu, a passionate JavaScript Developer specializing in Front-End Development, RESTful Services, and creating dynamic, user-friendly web and mobile applications. 🚀
 
 🌟 About Me
 🛠️ I design and build modern, high-quality web applications and robust backend solutions.
